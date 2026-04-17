@@ -1,0 +1,72 @@
+---
+title: '快速入门 (Quickstart)'
+description: '只需两分钟，将您的现有项目无缝切换至 Omni API。'
+---
+
+## 两分钟接入 Omni API
+
+Omni API 完全兼容主流的大模型 SDK 格式，您只需修改一行代码即可完成切换。
+
+<Steps>
+  <Step title="获取您的 API Key">
+    前往 **`https://omni-api.com`** 注册并登录。
+
+    在 **API Keys** 页面点击 **创建新密钥**。您的 API Key 仅在创建时显示一次，请务必立即复制并妥善保存。
+  </Step>
+
+  <Step title="替换 Base URL">
+    Omni API 的核心设计理念：**只需替换 Base URL 和 API Key，其余代码无需任何改动。**
+
+    请将您代码中 OpenAI SDK 的默认 Base URL 替换为：
+    `https://api.omni-oneapi.com/v1`
+  </Step>
+
+  <Step title="发起第一次请求">
+    现在，您可以使用您最熟悉的语言发起请求了！无论您请求的是 OpenAI、Claude 还是 DeepSeek，都只需要这一套代码。
+
+    <CodeGroup>
+      ```python Python
+      from openai import OpenAI
+
+      client = OpenAI(
+          api_key="您的_OMNI_API_KEY",
+          base_url="`https://api.omni-oneapi.com/v1`"
+      )
+
+      response = client.chat.completions.create(
+          model="gpt-4o",
+          messages=[{"role": "user", "content": "你好，世界！"}]
+      )
+      print(response.choices[0].message.content)
+      ```
+
+      ```javascript Node.js
+      import OpenAI from 'openai';
+
+      const openai = new OpenAI({
+        apiKey: '您的_OMNI_API_KEY',
+        baseURL: '`https://api.omni-oneapi.com/v1`',
+      });
+
+      async function main() {
+        const completion = await openai.chat.completions.create({
+          messages: [{ role: 'user', content: '你好，世界！' }],
+          model: 'gpt-4o',
+        });
+        console.log(completion.choices[0].message.content);
+      }
+      main();
+      ```
+
+      ```bash cURL
+      curl `https://api.omni-oneapi.com/v1/chat/completions` \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Bearer 您的_OMNI_API_KEY" \
+        -d '{
+          "model": "gpt-4o",
+          "messages": [{"role": "user", "content": "你好，世界！"}]
+        }'
+      ```
+    </CodeGroup>
+  </Step>
+</Steps>
