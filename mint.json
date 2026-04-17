@@ -1,5 +1,6 @@
 {
   "name": "Omni OneAPI",
+  "favicon": "/favicon.svg",
   "colors": {
     "primary": "#0f172a",
     "light": "#f8fafc",
