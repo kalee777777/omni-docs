@@ -1,28 +1,15 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
-  "name": "Omni API",
-  "favicon": "/favicon.svg",
-  "api": {
-    "baseUrl": "https://api.omni-oneapi.com"
-  },
+  "name": "Omni OneAPI",
   "colors": {
-    "primary": "#06b6d4",
-    "light": "#06b6d4",
-    "dark": "#06b6d4"
+    "primary": "#0f172a",
+    "light": "#f8fafc",
+    "dark": "#0f172a"
   },
   "navigation": [
     {
-      "group": "入门指南",
+      "group": "开始使用",
       "pages": [
-        "introduction",
-        "quickstart",
-        "models"
-      ]
-    },
-    {
-      "group": "API 接口参考",
-      "pages": [
-        "api-reference/chat"
+        "introduction"
       ]
     }
   ]
